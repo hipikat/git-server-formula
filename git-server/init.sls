@@ -77,7 +77,7 @@
 
 {% endfor %}
 
-# Add contrib commands runnable by git-shell
+# Add utility commands, runnable by git-shell
 {% for cmd in ('create', 'addkey') %}
 
 .Git shell command '{{ cmd }}':
