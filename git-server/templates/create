@@ -1,0 +1,22 @@
+#!/bin/sh
+
+if [ "$USERNAME" != "git" ]
+then
+    echo "This command must be run as the 'git' user."
+    exit 1
+fi
+
+# Display usage instructions if run without parameters
+if [ $# -eq 0 ]
+then
+    echo "Usage: create <project.git>"
+    exit 1
+fi
+
+# Append '.git' to the project name if it isn't specified
+project_name=$(echo "$*" | sed 's/\.git$\|$/.git/i')
+
+# Create and initialise the project
+mkdir "$project_name" && \
+cd "$project_name" && \
+git --bare init
