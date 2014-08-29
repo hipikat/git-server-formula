@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$USERNAME" != "git" ]
+if [ "$USER" != "git" ]
 then
     echo "This command must be run as the 'git' user."
     exit 1

@@ -1,13 +1,9 @@
 #!/bin/sh
 
-# If the user is not root
-if [ "$USERNAME" != "root" ]
+if [ "$USER" != "git" ]
 then
-
-    # Dislpay a notice and stop
-    echo "Sorry, only root can use this command."
+    echo "This command must be run as the 'git' user."
     exit 1
-
 fi
 
 # Read in the SSH key
